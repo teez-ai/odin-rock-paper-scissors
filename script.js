@@ -1,23 +1,49 @@
+
+const playerSelection = prompt("Enter your choice: ");
+const computerSelection = getComputerChoice();
+
 function getComputerChoice(){
-  // Return "rock", "paper", "scissors"
+  let choice = "scissors"
+  return choice;
 }
 
 function playRound(playerSelection, computerSelection){
-  // Function that plays a single round of Rock Paper Scissors
-  // Returns a string that declares the winner or tie
-  // Ex "Player Loses! Paper beats rock"
-  // Make the playerSelection parameter case-insensitive so user can input 
-  // rock Rock, ROck, ROCK
-}
-function playGame(){
-  // Use previous function playGame() inside of this one to play a five round game
-  // that keeps score and reports the winne or loser at the end
-  // NO LOOPING just call playRound() 5 times
+  if (playerSelection === "rock" &&  computerSelection === "scissors") {
+    console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
+   } 
+   else if(playerSelection === "rock" &&  computerSelection === "paper"){
+      console.log(`${computerSelection} beats ${playerSelection}. You Lose`);
+   } 
+   else if(playerSelection === "rock" &&  computerSelection === "rock"){
+      console.log(`Tie`);
+   } 
+   else if (playerSelection === "paper" &&  computerSelection === "rock") {
+      console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
+   } 
+   else if(playerSelection === "paper" &&  computerSelection === "scissors"){
+        console.log(`${computerSelection} beats ${playerSelection}. You Lose.`);
+   } 
+   else if(playerSelection === "paper" &&  computerSelection === "paper"){
+        console.log(`Tie`);  
+     }
+   else if (playerSelection === "scissors" &&  computerSelection === "paper") {
+        console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
+   } 
+   else if(playerSelection === "scissors" &&  computerSelection === "rock"){
+        console.log(`${computerSelection} beats ${playerSelection}. You Lose.`);
+   } 
+   else if(playerSelection === "scissors" &&  computerSelection === "scissors"){
+        console.log(`Tie`);  
+     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+function playGame(){
+  playRound(playerSelection, computerSelection);
+}
+playGame();
+playGame();
+playGame();
+playGame();
 
 // Return the results using the return key and not the console.log()
 // At this point you should be using console.log() to display the results of each round and the winner at the end.
