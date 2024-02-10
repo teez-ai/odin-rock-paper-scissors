@@ -1,5 +1,5 @@
 
-const playerSelection = prompt("Enter your choice: ");
+const playerSelection = prompt("Enter rock, scissors, or paper: ").toLowerCase();
 const computerSelection = getComputerChoice();
 
 function getComputerChoice(){
@@ -9,10 +9,10 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
   if (playerSelection === "rock" &&  computerSelection === "scissors") {
-    console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
+      console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
    } 
    else if(playerSelection === "rock" &&  computerSelection === "paper"){
-      console.log(`${computerSelection} beats ${playerSelection}. You Lose`);
+      console.log(`Computer chose: ${computerSelection}. ${computerSelection} beats ${playerSelection}. You Lose`);
    } 
    else if(playerSelection === "rock" &&  computerSelection === "rock"){
       console.log(`Tie`);
@@ -21,20 +21,23 @@ function playRound(playerSelection, computerSelection){
       console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
    } 
    else if(playerSelection === "paper" &&  computerSelection === "scissors"){
-        console.log(`${computerSelection} beats ${playerSelection}. You Lose.`);
+      console.log(`Computer chose: ${computerSelection}. ${computerSelection} beats ${playerSelection}. You Lose.`);
    } 
    else if(playerSelection === "paper" &&  computerSelection === "paper"){
-        console.log(`Tie`);  
-     }
+      console.log(`Tie`);  
+   }
    else if (playerSelection === "scissors" &&  computerSelection === "paper") {
-        console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
+      console.log(`${playerSelection} beats ${computerSelection}. You Win!`);
    } 
    else if(playerSelection === "scissors" &&  computerSelection === "rock"){
-        console.log(`${computerSelection} beats ${playerSelection}. You Lose.`);
+      console.log(`Computer chose: ${computerSelection}. ${computerSelection} beats ${playerSelection}. You Lose.`);
    } 
    else if(playerSelection === "scissors" &&  computerSelection === "scissors"){
-        console.log(`Tie`);  
-     }
+      console.log(`Tie`);  
+   }
+   else {
+      playGame();   
+   }
 }
 
 function playGame(){
